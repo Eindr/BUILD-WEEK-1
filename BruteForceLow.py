@@ -1,6 +1,6 @@
 import requests
 
-cookies = {'PHPSESSID' : '2b19004c498b2da3788e56052d8cfc3e', 'security' : 'high'}
+cookies = {'PHPSESSID' : '2b19004c498b2da3788e56052d8cfc3e', 'security' : 'low'}
 
 nome_utente = []
 passwords = []
