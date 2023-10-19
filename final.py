@@ -62,9 +62,10 @@ async def main():
             # non funziona perché ci sono ancora processi in esecuzione
             #quit()
 
-get_dvwa_cookies()
-starting_time = time()
-loop = asyncio.get_event_loop()
-loop.run_until_complete(main())
-print(time() - starting_time)
-#print([page.url for page in responses])
+if (__name__ == '__main__'):
+    get_dvwa_cookies()
+    starting_time = time()
+    loop = asyncio.get_event_loop()
+    loop.run_until_complete(main())
+    print(time() - starting_time)
+    #print([page.url for page in responses])
